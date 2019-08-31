@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface StudentDao {
     List<Student> getAllStudents();
+    void createStudent(Student student);
 }

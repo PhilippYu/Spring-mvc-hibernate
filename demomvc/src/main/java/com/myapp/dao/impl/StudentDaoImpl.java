@@ -22,8 +22,15 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public List<Student> getAllStudents() {
-        Session session = this.sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
         List<Student> students = session.createQuery("from Student").list();
         return students;
+    }
+
+    @Override
+    public void createStudent(Student student) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(student);
+
     }
 }
